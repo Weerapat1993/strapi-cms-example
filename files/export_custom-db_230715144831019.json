@@ -1,0 +1,227 @@
+{
+	"version": 2,
+	"data": {
+		"plugin::users-permissions.user": {
+			"1": {
+				"id": 1,
+				"username": "Amoris",
+				"email": "amoris@example.com",
+				"provider": "local",
+				"password": "$2a$10$AhJhUu9D2QcVTim8oroK8uhw6mEuMvPo4OYcD4z/YnPtFbJK2f85O",
+				"resetPasswordToken": null,
+				"confirmationToken": null,
+				"confirmed": true,
+				"blocked": false,
+				"createdAt": "2023-07-15T14:19:00.475Z",
+				"updatedAt": "2023-07-15T14:19:00.475Z",
+				"role": 1,
+				"createdBy": null,
+				"updatedBy": null
+			}
+		},
+		"plugin::users-permissions.permission": {
+			"1": {
+				"id": 1,
+				"action": "plugin::users-permissions.user.me",
+				"createdAt": "2023-07-15T07:30:40.207Z",
+				"updatedAt": "2023-07-15T07:30:40.207Z",
+				"role": 1,
+				"createdBy": null,
+				"updatedBy": null
+			},
+			"2": {
+				"id": 2,
+				"action": "plugin::users-permissions.auth.changePassword",
+				"createdAt": "2023-07-15T07:30:40.207Z",
+				"updatedAt": "2023-07-15T07:30:40.207Z",
+				"role": 1,
+				"createdBy": null,
+				"updatedBy": null
+			},
+			"3": {
+				"id": 3,
+				"action": "plugin::users-permissions.auth.callback",
+				"createdAt": "2023-07-15T07:30:40.210Z",
+				"updatedAt": "2023-07-15T07:30:40.210Z",
+				"role": 2,
+				"createdBy": null,
+				"updatedBy": null
+			},
+			"4": {
+				"id": 4,
+				"action": "plugin::users-permissions.auth.connect",
+				"createdAt": "2023-07-15T07:30:40.210Z",
+				"updatedAt": "2023-07-15T07:30:40.210Z",
+				"role": 2,
+				"createdBy": null,
+				"updatedBy": null
+			},
+			"5": {
+				"id": 5,
+				"action": "plugin::users-permissions.auth.forgotPassword",
+				"createdAt": "2023-07-15T07:30:40.210Z",
+				"updatedAt": "2023-07-15T07:30:40.210Z",
+				"role": 2,
+				"createdBy": null,
+				"updatedBy": null
+			},
+			"6": {
+				"id": 6,
+				"action": "plugin::users-permissions.auth.resetPassword",
+				"createdAt": "2023-07-15T07:30:40.210Z",
+				"updatedAt": "2023-07-15T07:30:40.210Z",
+				"role": 2,
+				"createdBy": null,
+				"updatedBy": null
+			},
+			"7": {
+				"id": 7,
+				"action": "plugin::users-permissions.auth.register",
+				"createdAt": "2023-07-15T07:30:40.210Z",
+				"updatedAt": "2023-07-15T07:30:40.210Z",
+				"role": 2,
+				"createdBy": null,
+				"updatedBy": null
+			},
+			"8": {
+				"id": 8,
+				"action": "plugin::users-permissions.auth.emailConfirmation",
+				"createdAt": "2023-07-15T07:30:40.210Z",
+				"updatedAt": "2023-07-15T07:30:40.210Z",
+				"role": 2,
+				"createdBy": null,
+				"updatedBy": null
+			},
+			"9": {
+				"id": 9,
+				"action": "plugin::users-permissions.auth.sendEmailConfirmation",
+				"createdAt": "2023-07-15T07:30:40.210Z",
+				"updatedAt": "2023-07-15T07:30:40.210Z",
+				"role": 2,
+				"createdBy": null,
+				"updatedBy": null
+			},
+			"10": {
+				"id": 10,
+				"action": "api::category.category.find",
+				"createdAt": "2023-07-15T14:30:54.972Z",
+				"updatedAt": "2023-07-15T14:30:54.972Z",
+				"role": 2,
+				"createdBy": null,
+				"updatedBy": null
+			},
+			"11": {
+				"id": 11,
+				"action": "api::category.category.findOne",
+				"createdAt": "2023-07-15T14:30:54.972Z",
+				"updatedAt": "2023-07-15T14:30:54.972Z",
+				"role": 2,
+				"createdBy": null,
+				"updatedBy": null
+			},
+			"12": {
+				"id": 12,
+				"action": "api::restaurant.restaurant.find",
+				"createdAt": "2023-07-15T14:30:54.972Z",
+				"updatedAt": "2023-07-15T14:30:54.972Z",
+				"role": 2,
+				"createdBy": null,
+				"updatedBy": null
+			},
+			"13": {
+				"id": 13,
+				"action": "api::restaurant.restaurant.findOne",
+				"createdAt": "2023-07-15T14:30:54.972Z",
+				"updatedAt": "2023-07-15T14:30:54.972Z",
+				"role": 2,
+				"createdBy": null,
+				"updatedBy": null
+			}
+		},
+		"plugin::users-permissions.role": {
+			"1": {
+				"id": 1,
+				"name": "Authenticated",
+				"description": "Default role given to authenticated user.",
+				"type": "authenticated",
+				"createdAt": "2023-07-15T07:30:40.205Z",
+				"updatedAt": "2023-07-15T07:30:40.205Z",
+				"permissions": [
+					1,
+					2
+				],
+				"users": [
+					1
+				],
+				"createdBy": null,
+				"updatedBy": null
+			},
+			"2": {
+				"id": 2,
+				"name": "Public",
+				"description": "Default role given to unauthenticated user.",
+				"type": "public",
+				"createdAt": "2023-07-15T07:30:40.206Z",
+				"updatedAt": "2023-07-15T14:30:54.970Z",
+				"permissions": [
+					3,
+					4,
+					5,
+					6,
+					7,
+					8,
+					9,
+					10,
+					11,
+					12,
+					13
+				],
+				"users": [],
+				"createdBy": null,
+				"updatedBy": null
+			}
+		},
+		"plugin::i18n.locale": {
+			"1": {
+				"id": 1,
+				"name": "English (en)",
+				"code": "en",
+				"createdAt": "2023-07-15T07:30:40.218Z",
+				"updatedAt": "2023-07-15T07:30:40.218Z",
+				"createdBy": null,
+				"updatedBy": null
+			}
+		},
+		"plugin::upload.folder": {},
+		"plugin::upload.file": {},
+		"api::restaurant.restaurant": {
+			"1": {
+				"id": 1,
+				"name": "ลูกชิ้นศรีย่าน",
+				"description": "**ลูกชิ้นศรีย่าน เปิดแล้ว !!**",
+				"createdAt": "2023-07-15T14:28:40.858Z",
+				"updatedAt": "2023-07-15T14:31:43.138Z",
+				"publishedAt": "2023-07-15T14:31:43.137Z",
+				"categories": [
+					1
+				],
+				"createdBy": null,
+				"updatedBy": null
+			}
+		},
+		"api::category.category": {
+			"1": {
+				"id": 1,
+				"name": "Thai Food",
+				"createdAt": "2023-07-15T14:29:17.473Z",
+				"updatedAt": "2023-07-15T14:31:32.695Z",
+				"publishedAt": "2023-07-15T14:31:32.693Z",
+				"restaurants": [
+					1
+				],
+				"createdBy": null,
+				"updatedBy": null
+			}
+		}
+	}
+}

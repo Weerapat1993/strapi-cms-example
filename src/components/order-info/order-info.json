@@ -1,0 +1,30 @@
+{
+  "collectionName": "components_order_info_order_infos",
+  "info": {
+    "displayName": "Order Info",
+    "icon": "cube",
+    "description": ""
+  },
+  "options": {},
+  "attributes": {
+    "product": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::product.product"
+    },
+    "name": {
+      "type": "string"
+    },
+    "qty": {
+      "type": "integer",
+      "required": true,
+      "min": 1,
+      "default": 1
+    },
+    "total_price": {
+      "type": "decimal",
+      "required": false,
+      "min": 0
+    }
+  }
+}

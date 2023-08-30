@@ -1,0 +1,53 @@
+name: Build Version
+
+on:
+  workflow_dispatch:
+    inputs:
+      version:
+        type: choice
+        description: What version you want?
+        options:
+          - alpha
+          - patch
+          - minor
+          - major
+
+permissions:
+  contents: write
+  id-token: write # to enable use of OIDC for npm provenance
+
+jobs:
+  build-test-and-release:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Run Version
+        run: echo "Run ${{ github.event.inputs.version }} Version."
+
+      - name: Checkout code
+        uses: actions/checkout@v3
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v3
+        with:
+          node-version: "16.20.1"
+
+      - name: Cache packages
+        uses: actions/cache@v3
+        with:
+          path: |
+            ~/.npm
+            ./node_modules
+          key: ${{ runner.os }}-node-${{ hashFiles('**/package-lock.json') }}
+          restore-keys: ${{ runner.os }}-node-
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Start Bump Version
+        run: |
+          git config --global user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git config --global user.name "github-actions[bot]"
+          npm run release:${{ github.event.inputs.version }}
+          git push --follow-tags origin main
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
